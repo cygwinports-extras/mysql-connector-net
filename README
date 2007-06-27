@@ -1,0 +1,54 @@
+mysql-connector-net
+------------------------------------------
+MySQL Connector/Net 1.0 is a fully-managed ADO.NET driver for MySQL.
+
+Runtime requirements:
+  mono-1.2.3.1-2
+
+Build requirements:
+  cygwin-1.5.24-2
+  cygport-0.3.1-1
+  mono-1.2.3.1-2
+  nant-0.85-1
+
+Canonical website:
+  http://dev.mysql.com/doc/refman/5.0/en/connector-net.html
+
+Canonical download:
+  http://dev.mysql.com/downloads/connector/net/1.0.html
+
+-------------------------------------------
+
+Build instructions:
+  unpack mysql-connector-net-1.0.9-X-src.tar.bz2
+    if you use setup to install this src package, it will be
+	 unpacked under /usr/src automatically
+  cd /usr/src
+  cygport ./mysql-connector-net-1.0.9-X.cygport all
+
+This will create:
+  /usr/src/mysql-connector-net-1.0.9-X-src.tar.bz2
+  /usr/src/mysql-connector-net-1.0.9-X.tar.bz2
+
+-------------------------------------------
+
+Files included in the binary package:
+
+  /usr/lib/mono/gac/MySql.Data/1.0.9.0__bd9a8ee3cbc188dd/MySql.Data.dll
+  /usr/lib/mono/mysql/MySql.Data.dll
+  /usr/share/doc/Cygwin/mysql-connector-net-1.0.9.README
+  /usr/share/doc/mysql-connector-net-1.0.9/COPYING
+  /usr/share/doc/mysql-connector-net-1.0.9/Changes
+  /usr/share/doc/mysql-connector-net-1.0.9/MySql.Data.chm
+  /usr/share/doc/mysql-connector-net-1.0.9/README
+
+------------------
+
+Port Notes:
+
+----- version 1.0.9-1 -----
+Initial release for Cygwin.
+
+
+Cygwin port maintained by:
+http://cygwinports.dotsrc.org/

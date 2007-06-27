@@ -4,7 +4,7 @@ DESCRIPTION="Managed .NET MySQL bindings"
 HOMEPAGE="http://dev.mysql.com/doc/refman/5.0/en/connector-net.html"
 SRC_URI="http://mysql.mirrors.pair.com/Downloads/Connector-Net/${P}-noinstall.zip
          mysql.snk"
-PATCH_URI="mirror://portage/dev-dotnet/${PN}/files/${P}.patch"
+#PATCH_URI="mirror://portage/dev-dotnet/${PN}/files/${P}.patch"
 
 SRC_DIR=.
 

@@ -1,0 +1,4 @@
+category: Database Dotnet
+requires: mono
+sdesc: "Mono MySQL ADO.NET driver"
+ldesc: "MySQL Connector/Net 1.0 is a fully-managed ADO.NET driver for MySQL"

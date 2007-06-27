@@ -1,0 +1,40 @@
+diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4*' -x autom4te.cache -x config.cache -x config.log -x config.status -x config.h -x config.h.in -x ABOUT-NLS -x Makefile.in.in -x Makevars.template -x '*SlackBuild*' -x '*.egg-info' -x '*.class' -x '*.pyc' -x '*.mo' -x '*.gmo' -x '*.orig' -x '*.rej' -x '*.spec' -x '*.temp' -x '*~' -x '*.stackdump' -x COPYING -x INSTALL -x compile -x config-ml.in -x config.guess -x config.sub -x depcomp -x elisp-comp -x install-sh -x ltmain.sh -x mdate-sh -x missing -x mkinstalldirs -x py-compile -x symlink-tree -x texinfo.tex -x ylwrap -x omf.make -x xmldocs.make -x gnome-doc-utils.make -x gnome-doc-utils.m4 -x intltool.m4 -x intltool-extract -x intltool-extract.in -x intltool-merge -x intltool-merge.in -x intltool-update -x intltool-update.in origsrc/Client.build src/Client.build
+--- origsrc/Client.build	2007-01-11 16:00:24.000000000 -0600
++++ src/Client.build	2007-06-25 22:23:34.906250000 -0500
+@@ -34,8 +34,7 @@
+ 	</if>
+ 
+ 	<!-- builds the client on all supported frameworks -->
+-	<target name="allframeworks" depends="net-1.1">
+-		<call target="Docs"/>
++	<target name="allframeworks" depends="mono-1.0">
+ 	</target>
+ 
+ 	<!-- core managed driver target -->	
+diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4*' -x autom4te.cache -x config.cache -x config.log -x config.status -x config.h -x config.h.in -x ABOUT-NLS -x Makefile.in.in -x Makevars.template -x '*SlackBuild*' -x '*.egg-info' -x '*.class' -x '*.pyc' -x '*.mo' -x '*.gmo' -x '*.orig' -x '*.rej' -x '*.spec' -x '*.temp' -x '*~' -x '*.stackdump' -x COPYING -x INSTALL -x compile -x config-ml.in -x config.guess -x config.sub -x depcomp -x elisp-comp -x install-sh -x ltmain.sh -x mdate-sh -x missing -x mkinstalldirs -x py-compile -x symlink-tree -x texinfo.tex -x ylwrap -x omf.make -x xmldocs.make -x gnome-doc-utils.make -x gnome-doc-utils.m4 -x intltool.m4 -x intltool-extract -x intltool-extract.in -x intltool-merge -x intltool-merge.in -x intltool-update -x intltool-update.in origsrc/Samples/TableEditor/CS/TableEditor.build src/Samples/TableEditor/CS/TableEditor.build
+--- origsrc/Samples/TableEditor/CS/TableEditor.build	2007-01-09 10:28:40.000000000 -0600
++++ src/Samples/TableEditor/CS/TableEditor.build	2007-06-25 22:47:44.718750000 -0500
+@@ -12,9 +12,7 @@
+ 	</if>
+ 
+ 	<target name="default">
+-		<property name="framework" value="net-1.0"/>
+-		<call target="base"/>
+-		<property name="framework" value="net-1.1"/>
++		<property name="framework" value="mono-1.0"/>
+ 		<call target="base"/>
+ 	</target>	
+ 
+diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4*' -x autom4te.cache -x config.cache -x config.log -x config.status -x config.h -x config.h.in -x ABOUT-NLS -x Makefile.in.in -x Makevars.template -x '*SlackBuild*' -x '*.egg-info' -x '*.class' -x '*.pyc' -x '*.mo' -x '*.gmo' -x '*.orig' -x '*.rej' -x '*.spec' -x '*.temp' -x '*~' -x '*.stackdump' -x COPYING -x INSTALL -x compile -x config-ml.in -x config.guess -x config.sub -x depcomp -x elisp-comp -x install-sh -x ltmain.sh -x mdate-sh -x missing -x mkinstalldirs -x py-compile -x symlink-tree -x texinfo.tex -x ylwrap -x omf.make -x xmldocs.make -x gnome-doc-utils.make -x gnome-doc-utils.m4 -x intltool.m4 -x intltool-extract -x intltool-extract.in -x intltool-merge -x intltool-merge.in -x intltool-update -x intltool-update.in origsrc/mysqlclient/AssemblyInfo.cs src/mysqlclient/AssemblyInfo.cs
+--- origsrc/mysqlclient/AssemblyInfo.cs	2007-02-01 15:14:58.000000000 -0600
++++ src/mysqlclient/AssemblyInfo.cs	2007-06-25 22:53:58.000000000 -0500
+@@ -78,7 +78,5 @@
+ //       documentation for more information on this.
+ //
+ [assembly: AssemblyDelaySign(false)]
+-#if FINAL
+-[assembly: AssemblyKeyFile("")]
+-[assembly: AssemblyKeyName("ConnectorNet")]
+-#endif
++[assembly: AssemblyKeyFile("../../../../mysql.snk")]
++[assembly: AssemblyKeyName("")]
