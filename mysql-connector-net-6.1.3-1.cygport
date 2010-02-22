@@ -1,0 +1,32 @@
+inherit mono
+
+DESCRIPTION="Managed .NET MySQL bindings"
+HOMEPAGE="http://dev.mysql.com/doc/refman/5.0/en/connector-net.html"
+SRC_URI="http://mirror.csclub.uwaterloo.ca/mysql/Downloads/Connector-Net/${P}-src.zip"
+SRC_DIR=.
+
+src_compile() {
+	lndirs
+	cd ${B}/MySql.Data/Provider
+	xbuild MySql.Data.csproj
+
+	cat > MySql.Data.source <<_EOF
+<?xml version="1.0"?>
+<monodoc>
+  <source provider="ecma" basefile="MySql.Data" path="mysql"/>
+</monodoc>
+_EOF
+
+	mdoc update -i MySql.Data.xml -o doc bin/Debug/MySql.Data.dll
+	mdoc assemble -o MySql.Data doc/
+}
+
+src_install() {
+	cd ${B}/MySql.Data/Provider
+
+	gacinto ${PN}
+	dogac bin/Debug/MySql.Data.dll
+
+	insinto /usr/lib/monodoc/sources
+	doins MySql.Data.{source,tree,zip}
+}
